@@ -1,0 +1,32 @@
+monitor:
+  enabled: true
+  grafana:
+    grafana.ini:
+      server:
+        root_url: "%(protocol)s://%(domain)s/"
+      auth.anonymous:
+        enabled: true
+        org_name: "Main Org."
+        org_role: "Admin"
+    ingress:
+      annotations:
+        traefik.ingress.kubernetes.io/ssl-redirect: "false"
+      path: /
+      hosts:
+      - grafana.127.0.0.1.xip.io
+ingress:
+  enabled: true
+mongodb:
+  mongodbUsername: user
+  mongodbPassword: pass
+  mongodbDatabase: application
+application:
+  ingress:
+    hosts:
+    - application.127.0.0.1.xip.io
+  deployment:
+    image:
+      pullPolicy: IfNotPresent
+    resources: {}
+    autoscaling:
+      enabled: false

@@ -1,0 +1,16 @@
+dependencies:
+  - name: pipeline-cluster-monitor
+    repository: http://kubernetes-charts.banzaicloud.com/branch/master
+    version: 0.1.9
+    alias: monitor
+    condition: monitor.enabled
+  - name: pipeline-cluster-ingress
+    repository: http://kubernetes-charts.banzaicloud.com/branch/master
+    version: 0.0.5
+    alias: ingress
+    condition: ingress.enabled
+  - name: mongodb
+    repository: '@stable'
+    version: 4.6.2
+    alias: mongodb
+    condition: mongodb.enabled
