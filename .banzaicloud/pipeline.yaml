@@ -130,8 +130,7 @@ pipeline:
                 memory: 256Mi
           ingress:
             hosts:
-            - app.{{ .DRONE_REPO_NAME }}.{{ .CLUSTER_NAME }}.{{ .ORG_NAME }}.{{ .DOMAIN_NAME
-              }}
+            - app.{{ .DRONE_REPO_NAME }}.{{ .CLUSTER_NAME }}.{{ .ORG_NAME }}.{{ .DOMAIN_NAME }}
         mongodb:
           existingSecret: '{{ .DRONE_REPO }}-mongodb'
           mongodbDatabase: node-application
